@@ -1,97 +1,114 @@
 public class midterm {
-    class Product{
-        public String Productname;
-        public double Productprice;
-        public String getProductName(){
-            System.out.println("Product Name");
+class Product {
+        private String name;
+        private Double price;
+
+       
+        public String getName(){
+            return this.name;
         }
-        public String setProductName(){
-            System.out.println("chair");
+        public void setName(String name){
+                this.name = name ;
+                System.out.println("Product Name : " + name);
         }
-        public String getPrice(){
-            System.out.println("Product price");
+
+        
+        public Double getPrice(){
+            return this.price;
         }
-        public double setPrice(){
-            System.out.println(500.0);
+        public void setPrice(Double price){
+            this.price = price;
+            System.out.println("Product Price : " + price);
         }
+       
     }
-class Television{
-    public String Brand;
-    public String model;
-    public String ProductName(){
-            System.out.println("Television");
-        }
-        public double Productprice(){
-            System.out.println(20000.0);
-        }
+
+    class Electronics extends Product{
+        private String brand;
+        private String model;
+
+        
+      
         public String getBrand(){
-            System.out.println("Brand");
+            return this.brand;
         }
-        public String setBrand(){
-            System.out.println("Samsung");
+        public void setBrand(String brand){
+            this.brand = brand;
+            System.out.println("Brand : " + brand);
         }
+
         public String getModel(){
-            System.out.println("Model");
+            return this.model;
         }
-        public String setModel(){
-            System.out.println("Neo QLED");
+        public void setModel(String model){
+            this.model = model;
+            System.out.println("Modle : " + model);
         }
- }
- class Smartphone{
-    public String brand;
-    public String model;
-    public String ProductName(){
-            System.out.println("Iphone");
-        }
-        public double Productprice(){
-            System.out.println(40000.0);
-        }
-        public String getBrand(){
-            System.out.println("Brand");
-        }
-        public String setBrand(){
-            System.out.println("Apple");
-        }
-        public String getModel(){
-            System.out.println("Model");
-        }
-        public String setModel(){
-            System.out.println("Iphone 99");
-        }
+
+        
+    }
+    class Smartphone extends Electronics{
+        private String operatingSystem;
+
         public String getOperatingSystem(){
-            System.out.println("Operasion System");
+            return this.operatingSystem;
         }
-        public String setOperatingSystem(){
-            System.out.println("ios");
-        }
- }
- class Book {
-    public String author;
-    public int pages;
-    public String ProductName(){
-            System.out.println("OOP Programmimg");
-        }
-        public double Productprice(){
-            System.out.println(250.0);
-        }
-        public String getAuthor(){
-            System.out.println("Author");
-    
-        }
-        public String setAuthor(){
-            System.out.println("Johe Doe");
-        }
-        public String getNumberofPages(){
-            System.out.println("Number of Pages");
-        }
-        public int setNumberofPages(){
-            System.out.println(300);
+        public void setOperatingSydtem(String operatingSystem){
+            this.operatingSystem = operatingSystem;
+            System.out.println("Operating System : " + operatingSystem);
         }
     }
- class midterm.showDetails(){
-        System.out.println("Product");
-        System.out.println("Electronics");
-        System.out.println(" Book");
+    class Book extends Product {
+        private String author;
+        private int pages;
+
+        
+        public String getAuthor(){
+            return this.author;
+        }
+        public void setAuthor(String author){
+            this.author = author;
+            System.out.println("Author : " + author);
+        }
+        public int getpages(){
+            return this.pages;
+        }
+        public void setPages(int pages){
+            this.pages = pages;
+            System.out.println("Number of Pages : " + pages);        }
+
+    }
+    public class midthem2 {
+    public static void main(String[] args) {
+        Product PN = new Product();
+        PN.setName("chair");
+        PN.setPrice(500.0);
+        
+
+        Electronics E = new Electronics();
+        E.setName("Television");
+        E.setPrice(20000.0);
+        E.setBrand("Samsung");
+        E.setModel("Neo QLED");
+
+        Smartphone s = new Smartphone();
+        s.setName("Iphone");
+        s.setPrice(40000.0);
+        s.setBrand("Apple");
+        s.setModel("Iphone 99");
+        s.setOperatingSydtem("ios");
+
+        Book b = new Book();
+        b.setName("OOP Programming");
+        b.setPrice(250.0);
+        b.setAuthor("John Doe");
+        b.setPages(300);
+        
+
+        
+    }   
+         
+    }
  }
 }
 
