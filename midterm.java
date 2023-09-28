@@ -1,115 +1,111 @@
-public class midterm {
-class Product {
-        private String name;
-        private Double price;
+import java.util.ArrayList;
 
-       
-        public String getName(){
-            return this.name;
-        }
-        public void setName(String name){
-                this.name = name ;
-                System.out.println("Product Name : " + name);
-        }
+public class Employee {
+    private String name;
+    private int age;
+    private String position;
+    private String empID;
+    private ArrayList<Project> myProjects;
 
-        
-        public Double getPrice(){
-            return this.price;
-        }
-        public void setPrice(Double price){
-            this.price = price;
-            System.out.println("Product Price : " + price);
-        }
-       
+    public Employee(String name, int age, String position, String empID) {
+        this.name = name;
+        this.age = age;
+        this.position = position;
+        this.empID = empID;
+        this.myProjects = new ArrayList<Project>();
     }
 
-    class Electronics extends Product{
-        private String brand;
-        private String model;
-
-        
-      
-        public String getBrand(){
-            return this.brand;
-        }
-        public void setBrand(String brand){
-            this.brand = brand;
-            System.out.println("Brand : " + brand);
-        }
-
-        public String getModel(){
-            return this.model;
-        }
-        public void setModel(String model){
-            this.model = model;
-            System.out.println("Modle : " + model);
-        }
-
-        
+    public void addProject(Project project) {
+        myProjects.add(project);
     }
-    class Smartphone extends Electronics{
-        private String operatingSystem;
 
-        public String getOperatingSystem(){
-            return this.operatingSystem;
-        }
-        public void setOperatingSydtem(String operatingSystem){
-            this.operatingSystem = operatingSystem;
-            System.out.println("Operating System : " + operatingSystem);
+    public void showDetails() {
+        System.out.println("Name: " + name);
+        System.out.println("Age: " + age);
+        System.out.println("Position: " + position);
+        System.out.println("Employee ID: " + empID);
+        System.out.println("Projects:");
+        for (Project project : myProjects) {
+            System.out.println("- " + project.getProjectName());
         }
     }
-    class Book extends Product {
-        private String author;
-        private int pages;
+   public class Person {
+    private String name;
+    private int age;
 
-        
-        public String getAuthor(){
-            return this.author;
-        }
-        public void setAuthor(String author){
-            this.author = author;
-            System.out.println("Author : " + author);
-        }
-        public int getpages(){
-            return this.pages;
-        }
-        public void setPages(int pages){
-            this.pages = pages;
-            System.out.println("Number of Pages : " + pages);        }
-
+    public String getName() {
+        return name;
     }
-    public class midthem2 {
-    public static void main(String[] args) {
-        Product PN = new Product();
-        PN.setName("chair");
-        PN.setPrice(500.0);
-        
 
-        Electronics E = new Electronics();
-        E.setName("Television");
-        E.setPrice(20000.0);
-        E.setBrand("Samsung");
-        E.setModel("Neo QLED");
-
-        Smartphone s = new Smartphone();
-        s.setName("Iphone");
-        s.setPrice(40000.0);
-        s.setBrand("Apple");
-        s.setModel("Iphone 99");
-        s.setOperatingSydtem("ios");
-
-        Book b = new Book();
-        b.setName("OOP Programming");
-        b.setPrice(250.0);
-        b.setAuthor("John Doe");
-        b.setPages(300);
-        
-
-        
-    }   
-         
+    public void setName(String name) {
+        this.name = name;
     }
- }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
 }
+public class Job {
+    private String position;
+    private int empID;
+
+    public String getPosition() {
+        return position;
+    }
+
+    public void setPosition(String position) {
+        this.position = position;
+    }
+
+    public int getEmpID() {
+        return empID;
+    }
+
+    public void setEmpID(int empID) {
+        this.empID = empID;
+    }
+}
+public class Project {
+    private String projectName;
+    private String description;
+
+    public Project(String projectName, String description) {
+        this.projectName = projectName;
+        this.description = description;
+    }
+
+    public String getProjectName() {
+        return projectName;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+       
+        Employee employee = new Employee("John", 30, "Manager", "E12345");
+
+        Project project1 = new Project("Project A", "Description A");
+        Project project2 = new Project("Project B", "Description B");
+        employee.addProject(project1);
+        employee.addProject(project2);
+
+        employee.showDetails();
+    }
+}
+
+
+ 
+}
+
+
+         
+
 
     
